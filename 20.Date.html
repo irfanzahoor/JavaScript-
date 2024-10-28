@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Time in JavaScript</title>
+
+</head>
+
+<body>
+
+    <div class="time">
+
+    </div>
+
+
+    <script>
+
+        // this will give current date and time
+        let date1 = new Date();
+        console.log(date1);
+
+
+        // this will give 1970 date
+        let date2 = new Date(0);
+        console.log(date2);
+
+        let mainDate = new Date(2022, 10, 13, 11, 0, 0);
+        console.log(mainDate);
+
+        let yr = mainDate.getFullYear();
+        console.log("The year is :" + yr);
+
+        let mon = mainDate.getMonth();
+        console.log("The month is :" + mon);
+
+        let dt = mainDate.getDate();
+        console.log("The date is :" + dt);
+
+        let hr = mainDate.getHours();
+        console.log("The year is :" + hr);
+
+        // there is also setDate dunction which will set date manually
+        let time = document.querySelector(".time");
+        function dateTime() {
+            time.innerHTML = new Date();
+        }
+        setInterval(dateTime, 1000);
+
+
+
+
+    </script>
+</body>
+
+</html>

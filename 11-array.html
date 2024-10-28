@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+
+<body>
+    <!-- // when we perform function in string they are immutables and  arrays are mutable                                 -->
+
+    <script>
+        let arr = [1, 2, 3, 4, 5];
+        console.log(arr);
+        console.log(arr.length);
+        console.log(arr.toString());
+        console.log(arr.join(" and "));  //add and b/w array element
+        console.log(arr.push("IrfanZahoor"));
+        console.log(arr.pop());
+        console.log(arr.shift()); //remove first element
+        console.log(arr.unshift("Pakistan")); // add  this to first element
+        console.log(delete arr[6]);
+
+        let a1 = [1, 2, 3];
+        let a2 = [4, 5, 6];
+        let a3 = [7, 9, 8];
+
+        console.log(a1.concat(a2, a3));  //this methid does not chnage original array all 3 will remain same
+
+        console.log(a3.sort());
+
+        let nums = [10, 20, 30, 40, 50];
+        console.log(nums.splice(1, 2, 56, 56));  //this will remove nums from ind 1 to 2 and add 56 in it place
+
+
+        // LOOPS
+
+        // simple for loop
+        for (let i = 0; i < nums; i++) {
+            const elm = nums[i];
+        }
+
+        // forEach loop
+        nums.forEach((value, ind, arr) => {
+            console.log(value, ind, arr);  //print val ind and array
+        })
+
+        const names = ["Alice", "Bob", "Charlie", "David"];
+
+        names.forEach((name) => {
+            console.log(name.length);
+        });
+
+        // for of loop
+        for (const val of nums) {
+            console.log(val);
+        }
+
+
+    </script>
+</body>
+
+</html>

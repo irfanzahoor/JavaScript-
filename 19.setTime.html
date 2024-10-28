@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Timeout and Set Intervals</title>
+    <style>
+        .text {
+            background-color: green;
+            color: black;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="text">
+        Hello I am a text
+    </div>
+
+    <!-- SetTime out operates one after a particular time interval -->
+    <!-- SetInterval operates repeated after entered time interval -->
+
+    <script>
+        setTimeout(() => {
+            document.querySelector(".text").style.color = "white";
+        }, 5000);
+
+        setInterval(() => {
+            document.querySelector(".text").style.background = "red"
+        }, 3000);
+        setInterval(() => {
+            document.querySelector(".text").style.background = "gray"
+        }, 4000);
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Children, Parent & Sibling Nodes</title>
+
+    <style>
+        .box {
+            height: 45px;
+            width: 50px;
+            border: 2px solid red;
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">Box1</div>
+        <div class="box">Box2</div>
+        <div class="box">Box3</div>
+        <div class="box">Box4</div>
+        <div class="box">Box5</div>
+    </div>
+
+    <script>
+        let var1 = document.body;
+        console.log(var1);  //give whole body
+
+        let var2 = document.body.childNodes[0];
+        console.log(var2);  //  give space right  after body and before container
+
+
+        let var3 = document.body.childNodes[1];
+        console.log(var3);  //give container
+
+        let var4 = document.body.childNodes[1].childNodes[0];
+        console.log(var4);  //give text space right after container
+
+        let var5 = document.body.childNodes[1].childNodes[1];
+        console.log(var5); //give box in container
+
+        let var6 = document.body.firstElementChild.childNodes;  //give all nodes of container
+        console.log(var6);
+
+        let var7 = document.body.firstElementChild.children;  //give element of container
+        console.log(var7);
+
+        let var8 = document.body.firstElementChild.children[2];  //this will give box3 in container
+        console.log(var8);
+
+        let var9 = document.body.firstElementChild.children[2].previousElementSibling;  //this will give box2 in container
+        console.log(var9);
+
+        let var10 = document.body.firstElementChild.children[2].nextElementSibling;  //this will give box4 in container and nextsibling give text node after box3
+        console.log(var10);
+
+        let var11 = document.body.firstElementChild.children[2].parentElement;  //this will give container
+        console.log(var11);
+    </script>
+
+</body>
+
+</html>

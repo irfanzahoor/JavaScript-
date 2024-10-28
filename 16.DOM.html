@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserting and Removing Elements</title>
+</head>
+
+<body>
+    <div class="container">
+        <div style="color:aqua" class="box">Hello Im a box</div>
+    </div>
+
+
+    <script>
+
+        console.log(document.querySelector(".box").innerHTML); //this will give html in box
+        console.log(document.querySelector(".box").innerText); //this will give text in box
+        console.log(document.querySelector(".container").innerText); //this will give text in container
+        console.log(document.querySelector(".container").innerHTML); //this will give html in container
+        console.log(document.querySelector(".container").outerHTML); //this will give outer and inner html of container
+
+
+        console.log(document.querySelector(".container").tagName); //tagname of class container is DIV
+        console.log(document.querySelector(".container").nodeName); //nodename is applicable to text node comment node
+        console.log(document.querySelector(".container").textContent);
+
+        // changing html of an element 
+        document.querySelector(".box").innerHTML = "Hello I'm changed";
+
+        // to check wether Element has an particular attribute
+        console.log(document.querySelector(".box").hasAttribute("style"));  //this will return true bcz box have class
+
+        // getting attribute
+        console.log(document.querySelector(".box").getAttribute("style"));  //this will give name of attribute we enter 
+
+        // changeing attribute
+        console.log(document.querySelector(".box").setAttribute("style", "color:red"));  //this will give name of attribute we enter 
+
+        // removing attribute
+        console.log(document.querySelector(".box").removeAttribute("style"));  //this will remove style attribute
+
+
+        // by writing 
+        // document.designMode="on"; // we can eit any website in browser
+
+        // INSERTING AN DIV TO CONTAINER
+        let entDiv = document.createElement("div");
+        entDiv.innerHTML = "This is the div we inserted in container";
+        entDiv.setAttribute("class", "divClass");
+        entDiv.setAttribute("style", "color:blue");
+        document.querySelector(".container").append(entDiv);
+        // document.querySelector(".container").after(entDiv); //this will add this div after container
+        // document.querySelector(".container").before(entDiv); //this will add div before container
+        // document.querySelector(".container").prepend(entDiv); //this make this div first child of conatiner
+
+
+        // INSERTING HTML/TEXT
+
+        let cont = document.querySelector(".container");
+
+        cont.insertAdjacentHTML("beforebegin", "<b>I am added before container ");  //before container
+
+        cont.insertAdjacentHTML("afterbegin", "<b>I am after begin "); //right inside container
+
+        cont.insertAdjacentHTML("beforeend", "<b>I am before end "); //inside end of container
+
+        cont.insertAdjacentHTML("afterend", "<b>I am after end "); //after container
+
+
+        // document.querySelector(".container").remove(); //this will remove container
+
+
+    </script>
+</body>
+
+</html>

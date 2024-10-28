@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searching in DOM</title>
+
+    <style>
+        .box {
+            height: 45px;
+            width: 50px;
+            border: 2px solid red;
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">Babar Azam</div>
+        <div class="box">Babar Azam</div>
+        <div class="box">Babar Azam</div>
+        <div class="box">Babar Azam</div>
+        <div class="box">Babar Azam</div>
+        <div class="box">Babar Azam</div>
+        <div id="green" class="box">Babar Azam</div>
+    </div>
+
+    <script>
+
+
+        let boxes = document.getElementsByClassName("box");
+        console.log(boxes);
+
+        // now change background clr of box 3 
+        boxes[2].style.backgroundColor = "red";
+
+        document.getElementById("green").style.backgroundColor = "green";
+
+        // by query selector
+        document.querySelector(".box").style.backgroundColor = "gray";
+
+        // to style all boxes using querySelectorAll we need to apply forEach loop
+        document.querySelectorAll(".box").forEach(e => {
+            e.style.color = "aqua";
+        })
+
+        // using traditional for loop
+        let myVAr = document.querySelectorAll(".box");
+        for (i = 0; i < 7; i++) {
+            myVAr[i].style.backgroundColor = "green";
+        }
+
+        // matches
+        let myDiv = document.getElementsByTagName("div");
+        console.log(myDiv[7].matches("#green"))  //this will return true
+        console.log(myDiv[5].matches("#green")); //this will return false
+
+        // closest
+        console.log(myDiv[5].closest("#green")); //this will give false bcz no parent or child matches
+        console.log(myDiv[5].closest(".container")); //this will give true bcz 5Th ind box hav parent name container
+
+        // contains
+        console.log(document.querySelector(".container").contains(myDiv[2]));  //true
+        console.log(document.querySelector(".container").contains(document.querySelector("body")));  //false
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events, Event Bubbling, setInterval & setTimeout </title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">Hello I am default Box</div>
+    </div>
+    <button id="btn">Change Content</button>
+
+    <script>
+
+
+        let button = document.getElementById("btn");
+
+        // onclick
+        button.addEventListener("click", () => {
+            document.querySelector(".box").innerHTML = "I am changed ";
+        });
+
+        // double click
+        button.addEventListener("dblclick", () => {
+            document.querySelector(".box").innerHTML = "I am double clicked";
+        });
+
+        // contextmenu this will fire when we right click
+        document.body.addEventListener("contextmenu", () => {
+            alert("I am right clicked");
+        });
+
+
+        // this will fire when we press key and leave 
+        document.body.addEventListener("keyup", () => {
+            alert("Up key pressed");
+        })
+
+        // this will fire as long as we press key
+        document.body.addEventListener("keydown", () => {
+            alert("Down key pressed");
+        })
+
+        // to write key which is pressed
+        document.body.addEventListener("keydown", (e) => {
+            document.write(e.key);
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>

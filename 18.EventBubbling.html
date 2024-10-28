@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling</title>
+
+    <style>
+        .child {
+            background-color: rgb(182, 223, 223);
+            padding: 20px;
+            margin: 10px;
+            border: 2px solid red;
+            cursor: pointer;
+        }
+
+        .childContainer {
+            background-color: bisque;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .container {
+            background-color: rgb(202, 119, 17);
+            padding: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="childContainer">
+            <div class="child">Hello Im a child</div>
+        </div>
+    </div>
+
+
+    <script>
+
+
+        document.querySelector(".child").addEventListener("click", (e) => {
+            e.stopPropagation(); //this will stop bubbling when child is clicked childcontainer and container wil not be clicked
+            alert("Child is clicked");
+        })
+
+        document.querySelector(".childContainer").addEventListener("click", (e) => {
+            e.stopPropagation();
+            alert("childContainer is clicked");
+        })
+
+        document.querySelector(".container").addEventListener("click", (e) => {
+            alert("Container is clicked");
+        })
+
+
+    </script>
+</body>
+
+</html>
